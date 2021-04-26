@@ -27,22 +27,11 @@ while((clave!=palabraClave) && (contador<3)){
 
     contador++;
 }
-    if(clave == palabraClave){  
-        console.log("clave ingresada con exito");
-            
-    }else{
-        console.log("se acabaron sus intentos, espere 1 minuto y vuelva a ingresar su calve");
+ if(clave == palabraClave){  
+    console.log("clave ingresada con exito");
+     }else{
+            console.log("se acabaron sus intentos, espere 1 minuto y vuelva a ingresar su calve");
 }
-/*
-while(contador<3){
-    clave= readlineSync.question('ingrese una clave ');
 
-    if(clave==palabraClave){
-        contador=3;
-        console.log("ingreso con exito ");
-    }
-    contador++;
-}
-*/
 
 
