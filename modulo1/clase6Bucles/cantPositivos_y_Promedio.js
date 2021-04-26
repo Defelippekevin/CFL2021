@@ -25,10 +25,9 @@ while(numero!=0){ // mientras ingrese un numero distinto de 0
     if(numero>0){
        positivo++; // si el numero ingresado es positivo se incrementa la variable
     }
-    if(numero==0){ // para que no me cuente el 0 que ingreso como ultimo numero, le resto 1 al contador total
-        contadorTotal--;
-    }
+  
 }
+contadorTotal--;
 promedio=(positivo*100)/contadorTotal; // hago el calculo de numeros positivos ingresados
 
 console.log("la cantidad de numeros positivos fue "+positivo); // muestro cuantos positivos ingreso

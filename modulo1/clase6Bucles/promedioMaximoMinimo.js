@@ -35,10 +35,9 @@ while(numero!=0){ // mientras ingrese un numero distinto de 0
     }
    let suma=suma+numero;
 
-    if(numero==0){ // para que no me cuente el 0 que ingreso como ultimo numero, le resto 1 al contador total
-        contador--;
-    }
+  
 }
+contador--;
 
 let promedio= suma/contador;
 
