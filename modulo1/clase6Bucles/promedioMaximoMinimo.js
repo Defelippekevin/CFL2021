@@ -13,10 +13,11 @@ las variables
 let readlineSync = require('readline-sync');
 
 let numero;
-let max=0;
-let min=0;
-let media=0;
+let max;
+let min;
+
 let contador=0;
+let suma=0;
 
 
 while(numero!=0){ // mientras ingrese un numero distinto de 0
@@ -25,15 +26,19 @@ while(numero!=0){ // mientras ingrese un numero distinto de 0
     console.log("el numero que ingreso fue "+ numero);
     
     contador++
+    if(max == undefined && min == undefined){
+        max = numero;
+        min = numero;
+       }
     
-    if(numero>max){
+    if(numero>max && numero!=0){
         max=numero;
     }
     
-    if(numero<min){
+    if(numero<min && numero!=0){
         min=numero;
     }
-   let suma=suma+numero;
+  suma=suma+numero;
 
   
 }

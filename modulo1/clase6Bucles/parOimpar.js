@@ -9,19 +9,20 @@ let numero= readlineSync.questionInt('ingrese una numero ');
 
 
 while(numero==0){// comparo si el numero ingresado es 0
-    console.log("ingrese otro numero ");
-    numero= readlineSync.questionInt('ingrese una numero '); // si es 0 le pido otro numero
-
-
-
-    // si entra a este if quiere decir que el numero ingresado no es 0
-
-    if(numero%2!==0){ // verifico si es impar o par
-        console.log(" el numero que ingreso "+numero+" es impar"); 
     
-    }else{
-    console.log("el numero que ingreso "+ numero+" es par");
-    }
+   
+
+  
+    numero= readlineSync.questionInt('ingrese una numero,si desea salir ingrese un 0 '); // si es 0 le pido otro numero
 }
+if(numero%2!==0){ // verifico si es impar o par
+    console.log(" el numero que ingreso "+numero+" es impar"); 
+
+}else{
+console.log("el numero que ingreso "+ numero+" es par");
+}
+
+
+
 
 
