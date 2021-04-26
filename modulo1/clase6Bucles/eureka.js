@@ -27,10 +27,11 @@ while((clave!=palabraClave) && (contador<3)){
 
     contador++;
 }
-    if(contador==3){  
-            console.log("se acabaron sus intentos, espere 1 minuto y vuelva a ingresar su calve");
+    if(clave == palabraClave){  
+        console.log("clave ingresada con exito");
+            
     }else{
-    console.log("clave ingresada con exito");
+        console.log("se acabaron sus intentos, espere 1 minuto y vuelva a ingresar su calve");
 }
 /*
 while(contador<3){
