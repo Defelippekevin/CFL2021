@@ -29,9 +29,13 @@ while(nombre!=''){
     notaPractica=readlineSync.questionFloat("ingrese la nota practica del alumno: ");
     notaProblemas=readlineSync.questionFloat("ingrese la nota de problemas del alumno: ");
 
+/*
+ if ((notaPractica >= 0 && notaPractica <= 10) && (notaProblemas >= 0 && notaProblemas <= 10)
+  && (notaTeoria >= 0 && notaTeoria <= 10)) 
+*/
 
-    if((notaPractica<=0 || notaPractica>10) || (notaTeorica<=0 || notaTeorica>10) ||
-        (notaProblemas<=0 || notaProblemas>10)){
+    if((notaPractica>=0 && notaPractica<=10) && (notaTeorica>=0 && notaTeorica<=10) &&
+        (notaProblemas>=0 && notaProblemas<=10)){
             console.log("error al ingresar una nota");
     }else{
         resultado= notaProblemas*porcentajeNotaProblemas + notaTeorica*porcentajeNotaTeorica 
