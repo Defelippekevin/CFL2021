@@ -6,27 +6,20 @@ reciba un número entero y devuelva la cantidad de divisores
 • Reutilice el método esMultiplo implementado para el ejercicio
 anterior
 */
-
-
-
-
-
-
 let readlineSync = require('readline-sync');
-
 let numero= readlineSync.questionInt('ingrese una numero ');
 let cantDivisores=0;
 
-for(let i=1;i<=numero;i++){
-    if(esMultiplo(numero,i)){
+for(let i=1;i<=numero;i++){ // itero el for hasta el numero ingresado
+    if(esMultiplo(numero,i)){ // llamo a la funcion es multiplo y le paso los valores con los que trabaja
         cantDivisores++;
     }
 }
 
 
-console.log("la cantidad de divissores que tiene el numero "+numero+" es "+cantDivisores);
+console.log("la cantidad de divisores que tiene el numero "+numero+" es "+cantDivisores);
 
-function esMultiplo(num1,num2){
+function esMultiplo(num1,num2){ // con los valores que les llega consulta si es multiplo o no
     if((num1%num2)==0){
         return true;
     }else{
