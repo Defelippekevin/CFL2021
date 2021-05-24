@@ -16,8 +16,9 @@ p{
 }
 h3{
     text-align: right;
+    font-style: italic;
 }
 
 body{
-    background-color: darkcyan;
+    background-color: rgb(15, 41, 19);
 }
