@@ -1,0 +1,118 @@
+.encabezado{
+    background-color: rgba(104, 101, 101, 0.445);
+    display: flex;
+    justify-content: space-around;
+    width: 1350px;
+    height: 100px;
+  
+}
+
+.logo{
+    background-color: blue;
+    width: 120px;
+    height: 30px;
+    margin-top: 50px;
+    margin-left: -150px;
+
+}
+
+.menu1{
+    background-color: green;
+    width: 240px;
+    height: 30px;
+    position: relative;
+    top: 10px;
+    left: 670px;
+   
+}
+
+.menu2{
+    background-color: red;
+    width: 450px;
+    height: 30px;
+    position: relative;
+    top: 50px;
+    left: 73px;
+}
+
+
+.contenedor{
+    display: flex;
+    justify-content: space-around;
+    /*
+    align-items: baseline;
+    */
+}
+
+.izquierda{
+    background-color: rgb(126, 77, 77);
+    width:  400px;
+    height: 200px;
+    margin: 20px;
+}
+
+.centro{
+    background-color: rgb(30, 74, 85);
+    width:  400px;
+    height: 200px;
+    margin: 20px;
+
+}
+.derecha{
+
+    background-color: rgb(188, 190, 19);
+    width:  400px;
+    height: 200px;
+    margin: 20px;
+
+}
+
+
+.contenedor2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30%;
+    align-items: baseline;
+    border-radius: 9px;
+
+   
+}
+
+.izq2{
+    background-color: rgb(8, 65, 8);
+    width: 70%;
+    height: 250px;
+    margin: 0px;
+    border-radius: 9px;
+
+}
+
+.der2{
+    background-color: rgb(66, 39, 8);
+    width: 20%;
+    height: 250px;
+    border-radius: 9px;
+}
+
+
+.pie{
+    background-color: rgb(33, 165, 218);
+    width: 1340px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    border-radius: 9px;
+
+}
+
+.elemento{
+    background-color: blue;
+    width: 100px;
+    position: relative;
+    top: 10px;
+    left: 150px;
+    border-radius: 9px;
+    height: 40px;
+}
