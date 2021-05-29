@@ -1,0 +1,54 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.div-1{
+    justify-content: center;
+    margin-left: 20px;
+    padding: 10px;
+    border: 10px green solid;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.div-2{
+
+    border: 10px solid;
+    justify-content: center;
+    text-align: center;
+    margin-right: 40px;
+    margin-left: 50px;
+    padding: 40px;
+
+}
+
+.div-3{
+
+    border: 10px blue solid;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 40%;
+
+}
+
+
+h2{
+    color: gold;
+}
+
+p{
+    font-style: oblique;
+    font-size: small;
+    color: indigo;
+}
+
+.imagen{
+    width: 250px;
+    height: 250px;
+    display: flex;
+}
