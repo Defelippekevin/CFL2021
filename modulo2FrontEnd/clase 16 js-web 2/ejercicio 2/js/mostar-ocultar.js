@@ -8,6 +8,7 @@ function cambiarEstilo(i) {
 
 
 for(let i=0;i<botones.length;i++){ 
+
     botones[i].addEventListener("click",function(e){
     cambiarEstilo(i);
      });

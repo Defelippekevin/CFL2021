@@ -1,9 +1,9 @@
-
+"use strict";
 let tarea= document.querySelector("#botonagregarTarea");
 tarea.addEventListener("click", agregartarea);
 
 function agregartarea(){
-    "use strict";
+    
     
    // event.preventDefault();
    
