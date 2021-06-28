@@ -1,0 +1,12 @@
+.bomba{
+    background-color: red;
+    background-image: url("../images/bomba.jpg");
+    background-repeat: no-repeat;
+  
+}
+
+.bomb{
+    width: 300px;
+    height: 200px;
+}
+
