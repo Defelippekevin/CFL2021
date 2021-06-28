@@ -34,3 +34,23 @@ function sumarMuchos(){
     contador.innerHTML = cantidad;
 
 }
+
+function estiloAleatorio() {
+    let intervalo=setInterval(function() {
+    let contador=0;
+    if (contador===20) {
+    clearInterval(intervalo);
+    }else{
+    contador++;
+    let div=document.getElementById("miDiv");
+    div.style.backgroundColor=`rgb(${aleatorio(0,255)},${aleatorio(0,255)},${aleatorio(0,255)})`;
+    div.style.fontSize=`${aleatorio(30,200)}px`;
+    div.style.marginLeft=`${aleatorio(0,100)}px`;
+    }
+    console.log(contador);
+    },1000); 
+}
+
+
+
+

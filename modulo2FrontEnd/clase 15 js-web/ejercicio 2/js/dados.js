@@ -5,13 +5,13 @@ let botonLanzar  = document.querySelector("#lanzarDados");
 botonLanzar.addEventListener("click",lanzarDados);
 
 function lanzarDados(){
-let sumaDados=0;
+//let sumaDados=0;
 let contador7=0;
 let dado1;
 let dado2;
 let total=0;
 
-  for(let i=1;i<=10;i++){
+  for(let i=1;i<=1000;i++){
     dado1= getDiceNumber();
     dado2= getDiceNumber();
     
@@ -21,16 +21,14 @@ let total=0;
          if(total==7){
          contador7++;
         }   
+       // sumaDados= sumaDados + total;
+       
     }   
-    sumaDados= sumaDados + total;
+    suma.innerHTML=total;
 
-
-suma.innerHTML=sumaDados;
 cant7.innerHTML=contador7;
 }
 
 function getDiceNumber(){
-
-    return   Math.floor((Math.random() * 6) + 1);
-     
+    return   Math.floor((Math.random() * 6) + 1);  
 }
