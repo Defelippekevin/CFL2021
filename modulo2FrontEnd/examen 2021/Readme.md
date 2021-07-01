@@ -1,0 +1,1 @@
+el curso se especializa en desarrollar programadores web con conocimientos en frontend y backend 
