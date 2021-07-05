@@ -1,0 +1,23 @@
+{
+  "name": "ejemplo1",
+  "version": "1.0.0",
+  "description": "primer proyecto npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prueba": "node ejemplo1.js",
+    "ej1": "node ejercicio1.js",
+    "ej2": "node ejercicio1_2.js"
+  },
+  "author": "mi",
+  "license": "ISC",
+  "dependencies": {
+    "ascii-art": "^2.8.0",
+    "asciichart": "^1.5.25",
+    "random-words": "^1.1.1",
+    "readline-sync": "^1.4.10",
+    "rectangle-area": "0.0.4",
+    "simple-hello-world-example": "^1.0.6",
+    "triangles-area": "0.0.4"
+  }
+}
