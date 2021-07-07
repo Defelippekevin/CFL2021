@@ -76,6 +76,11 @@ while (comando != 0) {
 
 */
 var auto1 = new registroAutomotor();
+auto1.insertarAuto("palio");
+console.log(auto1);
+auto1.buscarAuto("suran");
+auto1.eliminarAuto("palio");
+console.log(auto1);
 auto1.actualizarAuto("gol", 3);
 console.log(auto1);
 auto1.actualizarPorNombre("gol", "fiesta");
