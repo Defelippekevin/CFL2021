@@ -37,6 +37,7 @@ class registroAutomotor{
 
      eliminarAuto(auto:string):void{
        
+        //index of se queda con la 1ra ocurrencia(indice) o -1 si no lo encuentra
         let registroAEliminar:number= this.autos.indexOf(auto);
         
             if(registroAEliminar!=-1){
@@ -103,6 +104,11 @@ let auto1= new registroAutomotor();
 
 
 
+auto1.insertarAuto("palio");
+console.log(auto1);
+auto1.buscarAuto("suran")
+auto1.eliminarAuto("palio");
+console.log(auto1);
 auto1.actualizarAuto("gol",3)
 console.log(auto1);
 auto1.actualizarPorNombre("gol","fiesta");
