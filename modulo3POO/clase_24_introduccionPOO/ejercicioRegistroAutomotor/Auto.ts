@@ -2,7 +2,7 @@ class Auto{
     private marca:string;
     private modelo:string;
     private año:number;
-    private velocidadActual:number;
+    private velocidadActual:number=10;;
 
     public constructor(marca: string, modelo:string, año:number){
         this.marca = marca;
