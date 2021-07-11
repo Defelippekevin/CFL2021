@@ -3,7 +3,7 @@ import RegistroAutomotor from './RegistroAutomotor';
 
 let registro: RegistroAutomotor = new RegistroAutomotor();
 
-registro.cargarAutos();
+registro.cargarAutos('autos.txt','\n');
 registro.mostrarAutos();
 
 //menu de opciones CRUD

@@ -53,8 +53,8 @@ export default class RegistroAutomotor {
         console.log(this.autos);
     }
 
-    cargarAutos():void{
-        let autos:string[] = this.archivotxt.leerArchivo('autos.txt','\n');
+    cargarAutos(txtPath:string, separator:string):void{
+        let autos:string[] = this.archivotxt.leerArchivo(txtPath,separator);
         let propiedadesAuto:string[] = [];
         autos.forEach(autoString => {
             propiedadesAuto = autoString.split(";")

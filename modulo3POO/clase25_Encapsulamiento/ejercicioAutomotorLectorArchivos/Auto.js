@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var Auto = /** @class */ (function () {
     function Auto(patente, marca, modelo, año) {
         this.patente = patente;
@@ -31,4 +31,4 @@ var Auto = /** @class */ (function () {
     };
     return Auto;
 }());
-exports.default = Auto;
+exports["default"] = Auto;
