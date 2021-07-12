@@ -1,0 +1,3 @@
+abc123;ford;fiesta;2012
+def155;renault;duster;2000
+def165;renault;clio;2010
