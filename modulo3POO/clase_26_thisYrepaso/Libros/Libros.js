@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var Libro = /** @class */ (function () {
     function Libro(titulo, editorial, anioEdicion, genero, idioma, autor, precio) {
         this.titulo = titulo;
@@ -33,4 +33,4 @@ var Libro = /** @class */ (function () {
     };
     return Libro;
 }());
-exports.default = Libro;
+exports["default"] = Libro;

@@ -10,14 +10,8 @@ export default class GestorLibro {
     }
 
     public addLibro():void{
-        let titulo:string = RLS.question('Ingrese el titulo: ');
-        let editorial:string = RLS.question('Ingrese la editorial: ');
-        let anioEdicion:string = RLS.question('Ingrese el año: ');
-        let genero:string = RLS.question('Ingrese el genero: ');
-        let idioma:string = RLS.question('Ingrese el idioma: ');
-        let autor:string = RLS.question('Ingrese el autor: ');
-        let precio: number = RLS.questionInt('Ingrese el precio: ');
-        this.libros.push(new Libro(titulo,editorial,anioEdicion,genero,idioma,autor,precio));
+       
+        this.libros.push(this.pedirDatosYgenerarLibros());
     }
 
     public findLibro(titulo:string):number{
@@ -37,17 +31,11 @@ export default class GestorLibro {
     }
 
     public updateLibro(libroViejo: string): void{
-        let titulo:string = RLS.question('Ingrese el titulo: ');
-        let editorial:string = RLS.question('Ingrese la editorial: ');
-        let anioEdicion:string = RLS.question('Ingrese el año: ');
-        let genero:string = RLS.question('Ingrese el genero: ');
-        let idioma:string = RLS.question('Ingrese el idioma: ');
-        let autor:string = RLS.question('Ingrese el autor: ');
-        let precio: number = RLS.questionInt('Ingrese el precio: ');
+       
 
         let posicion= this.findLibro(libroViejo);
         if (posicion != -1) {
-            this.libros[posicion] = new Libro(titulo,editorial,anioEdicion,genero,idioma,autor,precio);
+            this.libros[posicion] = this.pedirDatosYgenerarLibros();
         }
         else{
             console.log("el libro no existe");
@@ -58,12 +46,25 @@ export default class GestorLibro {
         console.log(this.libros);
     }
 
-    cargarLibros():void{
-        let libros:string[] = (FS.readFileSync('libro.txt','utf8')).split('\n');
+    cargarLibros(rutaArchivo:string,separador:string):void{
+        let libros:string[] = (FS.readFileSync(rutaArchivo,'utf8')).split(separador);
         let propiedadesLibro:string[] = [];
         libros.forEach(libroString => {
             propiedadesLibro = libroString.split(";")
             this.libros.push(new Libro(propiedadesLibro[0],propiedadesLibro[1],propiedadesLibro[2],propiedadesLibro[3],propiedadesLibro[4],propiedadesLibro[5],parseInt(propiedadesLibro[6])))
         });
+    }
+
+    private pedirDatosYgenerarLibros():Libro{
+        let titulo:string = RLS.question('Ingrese el titulo: ');
+        let editorial:string = RLS.question('Ingrese la editorial: ');
+        let anioEdicion:string = RLS.question('Ingrese el año: ');
+        let genero:string = RLS.question('Ingrese el genero: ');
+        let idioma:string = RLS.question('Ingrese el idioma: ');
+        let autor:string = RLS.question('Ingrese el autor: ');
+        let precio: number = RLS.questionInt('Ingrese el precio: ');
+        let libro: Libro = new Libro(titulo,editorial,anioEdicion,genero,idioma,autor,precio);
+        return libro;
+
     }
 } 

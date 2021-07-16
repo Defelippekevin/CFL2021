@@ -2,7 +2,7 @@ import * as RLS from 'readline-sync';
 import GestorLibro from "./GestorLibros"; 
 
 let gestor: GestorLibro = new GestorLibro();
-gestor.cargarLibros();
+gestor.cargarLibros('libro.txt','\n');
 gestor.mostrarLibros();
 
 //menu de opciones CRUD
