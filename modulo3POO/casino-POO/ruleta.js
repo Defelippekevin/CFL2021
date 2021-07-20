@@ -27,6 +27,7 @@ var Ruleta = /** @class */ (function () {
     };
     Ruleta.prototype.jugar = function () {
         var resultado = false;
+        this.generarNumeroAleatorio();
         if (this.numeroAleatorio == this.numeroDelApostador) {
             resultado = true;
             console.log("felicitaciones, los numeros coincidieron usted  gano");
@@ -53,7 +54,6 @@ var Ruleta = /** @class */ (function () {
 var ruletita = new Ruleta();
 ruletita.cuantoApuesta();
 ruletita.pedirNumeroAlApostador();
-ruletita.generarNumeroAleatorio();
 ruletita.jugar();
 console.log(ruletita.getValorApuestaActual());
 /*

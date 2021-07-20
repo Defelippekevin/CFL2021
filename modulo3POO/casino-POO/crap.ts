@@ -16,7 +16,7 @@ class Crap{
         return   Math.floor((Math.random() * 2) + 1); 
     }
 
-    public tirarDados():number{
+    private tirarDados():number{
         this.dado1= this.dadosAleatorios();
         this.dado2=this.dadosAleatorios();
 
@@ -43,6 +43,7 @@ class Crap{
 
     public jugar():boolean{
         let resultado=false;
+        this.tirarDados();
         if(this.resultadoDados==this.resultadoApostador){
             resultado=true;
             console.log("felicitaciones, los numeros coincidieron usted  gano");
@@ -74,6 +75,6 @@ let  dado:Crap = new Crap();
 dado.cuantoApuesta();
 
 dado.pedirNumeroAlApostador();
-dado.tirarDados();
+
 dado.jugar();
 console.log(dado.getValorApuestaActual());

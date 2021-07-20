@@ -24,7 +24,7 @@ class Ruleta{
       
     }
 
-    public generarNumeroAleatorio():number{
+    private generarNumeroAleatorio():number{
         this.numeroAleatorio = Math.floor((Math.random() * 37) + 1);
         console.log("el numero que salio entre 1 y 36 fue "+this.numeroAleatorio);
         return this.numeroAleatorio;
@@ -40,6 +40,7 @@ class Ruleta{
 
         public jugar():boolean{
             let resultado=false;
+            this.generarNumeroAleatorio();
             if(this.numeroAleatorio==this.numeroDelApostador){
                 resultado=true;
                 console.log("felicitaciones, los numeros coincidieron usted  gano");
@@ -70,7 +71,7 @@ let ruletita:Ruleta = new Ruleta();
 ruletita.cuantoApuesta();
 
 ruletita.pedirNumeroAlApostador();
-ruletita.generarNumeroAleatorio();
+
 ruletita.jugar();
 console.log(ruletita.getValorApuestaActual());
 
