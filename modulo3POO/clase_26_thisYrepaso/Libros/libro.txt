@@ -1,0 +1,2 @@
+Harry Potter;Salamandra;2000;ficcion;español;sarasa;1000
+El Señor de los Anillos;sarasa;2002;novela;ingles;George Allen & Unwin;2000
