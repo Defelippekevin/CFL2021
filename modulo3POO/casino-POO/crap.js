@@ -28,6 +28,7 @@ var Crap = /** @class */ (function () {
     };
     Crap.prototype.jugar = function () {
         var resultado = false;
+        this.tirarDados();
         if (this.resultadoDados == this.resultadoApostador) {
             resultado = true;
             console.log("felicitaciones, los numeros coincidieron usted  gano");
@@ -53,6 +54,5 @@ var Crap = /** @class */ (function () {
 var dado = new Crap();
 dado.cuantoApuesta();
 dado.pedirNumeroAlApostador();
-dado.tirarDados();
 dado.jugar();
 console.log(dado.getValorApuestaActual());
