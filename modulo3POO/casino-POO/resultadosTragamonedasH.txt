@@ -1,0 +1,5 @@
+juego tragamonedasH 
+usted aposto 40
+ los numeros que salieron fueron el 10 y 16 y 18 y 17 y el 1
+el numero que le salio al jugador fue fue 13
+usted gano? false

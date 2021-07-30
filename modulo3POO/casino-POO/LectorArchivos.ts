@@ -3,11 +3,17 @@ import * as fs from 'fs' ;
 
 export default class LectorArchivos{
 
-    constructor(){
-       
+   private arregloString:string[];
+    
+
+    constructor (archivo:string, separador:string){
+       this.arregloString=(fs.readFileSync(archivo,'utf8')).split(separador);
     }
 
-    public leerArchivo(archivo:string, separador:string):string[]{
-       return (fs.readFileSync(archivo,'utf8')).split(separador);
+    public getArchivo():string[]{
+        return this.arregloString;
+
     }
+
+    
 }
