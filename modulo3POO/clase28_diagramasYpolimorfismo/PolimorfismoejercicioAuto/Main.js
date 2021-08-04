@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var Auto_1 = require("./Auto");
+var AutoDeportivo_1 = require("./AutoDeportivo");
+var primerAuto = new Auto_1["default"]('Ford', 2020);
+var superAuto = new AutoDeportivo_1["default"]('Ford', 2021);
+primerAuto.acelerar();
+superAuto.acelerar();
+console.log(primerAuto);
+console.log(superAuto);
+primerAuto.mejorarModelo();
+console.log(primerAuto);
