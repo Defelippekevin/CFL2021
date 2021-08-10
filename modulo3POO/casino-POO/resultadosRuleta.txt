@@ -1,0 +1,36 @@
+
+juego ruleta
+usted aposto 400
+ usted le aposto al numero 1
+el numero que salio en la ruleta fue 1
+usted gano? true
+juego ruleta
+usted aposto 40
+ usted le aposto al numero 1
+el numero que salio en la ruleta fue 1
+usted gano? true
+juego ruleta
+usted aposto 40
+ usted le aposto al numero 10
+el numero que salio en la ruleta fue 1
+usted gano? false
+juego ruleta
+usted aposto 40
+ usted le aposto al numero 30
+el numero que salio en la ruleta fue 3
+usted gano? false
+juego ruleta
+usted aposto 10
+ usted le aposto al numero 6
+el numero que salio en la ruleta fue 1
+usted gano? false
+juego ruleta
+usted aposto 40
+ usted le aposto al numero 30
+el numero que salio en la ruleta fue 25
+usted gano? false
+juego ruleta
+usted aposto 30
+ usted le aposto al numero 7
+el numero que salio en la ruleta fue 35
+usted gano? false

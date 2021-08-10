@@ -1,0 +1,15 @@
+juego Crap
+usted aposto 40
+ usted le aposto al numero 8
+el numero que salio en los dados  fue 8
+usted gano? true
+juego Crap
+usted aposto 5
+ usted le aposto al numero 7
+el numero que salio en los dados  fue 9
+usted gano? false
+juego Crap
+usted aposto 2
+ usted le aposto al numero 9
+el numero que salio en los dados  fue 7
+usted gano? false

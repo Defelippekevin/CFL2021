@@ -1,0 +1,5 @@
+juego tragamonedas
+usted aposto 40
+ los numeros que salieron fueron el 18 y 15 y el 7
+el numero que le salio al jugador fue fue 8
+usted gano? false
