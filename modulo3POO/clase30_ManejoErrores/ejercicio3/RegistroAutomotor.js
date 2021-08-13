@@ -3,6 +3,7 @@ exports.__esModule = true;
 var Auto_1 = require("./Auto");
 var LectorArchivos_1 = require("./LectorArchivos");
 var RLS = require("readline-sync");
+var Validar_1 = require("./Validar");
 var RegistroAutomotor = /** @class */ (function () {
     function RegistroAutomotor() {
         this.autos = [];
@@ -12,7 +13,7 @@ var RegistroAutomotor = /** @class */ (function () {
         var patente = RLS.question('Ingrese la pantente: ');
         var marca = RLS.question('Ingrese la marca: ');
         var modelo = RLS.question('Ingrese la modelo: ');
-        var año = RLS.questionInt('Ingrese el año: ');
+        var año = Validar_1["default"].checkNumero(RLS.question('Ingrese el año: '));
         this.autos.push(new Auto_1["default"](patente, marca, modelo, año));
     };
     RegistroAutomotor.prototype.findAuto = function (patente) {

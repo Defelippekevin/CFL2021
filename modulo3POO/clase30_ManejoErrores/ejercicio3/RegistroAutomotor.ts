@@ -1,6 +1,7 @@
 import Auto from './Auto';
 import Archivo from './LectorArchivos';
 import * as RLS from 'readline-sync';
+import Validar from './Validar';
 
 export default class RegistroAutomotor {
     private autos: Auto[];
@@ -12,12 +13,13 @@ export default class RegistroAutomotor {
     }
     
     public addAuto():void{
-        let patente:string = RLS.question('Ingrese la pantente: ');
-        let marca:string = RLS.question('Ingrese la marca: ');
-        let modelo:string = RLS.question('Ingrese la modelo: ');
-        let año: number = RLS.questionInt('Ingrese el año: ');
+        let patente:any = RLS.question('Ingrese la pantente: ');
+        let marca:any = RLS.question('Ingrese la marca: ');
+        let modelo:any = RLS.question('Ingrese la modelo: ');
+        let año: number = Validar.checkNumero( RLS.question('Ingrese el año: '));
         this.autos.push(new Auto(patente,marca,modelo,año));
     }
+   
 
     public findAuto(patente:string): number{
         for (let i = 0; i < this.autos.length; i++) {

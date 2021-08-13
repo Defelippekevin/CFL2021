@@ -6,7 +6,6 @@ let registro: RegistroAutomotor = new RegistroAutomotor();
 registro.cargarAutos('autos.txt','\n');
 registro.mostrarAutos();
 
-
 function checkPatente(patente:string){
     if(patente.length>6){
         throw new Error("la patente excede la cantidad de caracteres maximos");
@@ -16,7 +15,6 @@ function checkPatente(patente:string){
 //menu de opciones CRUD
 try{
 let opcion: string = RLS.question('Ingrese una opcion, C para registrar un auto, R para buscar un auto, U para actualizar datos de un auto y D para eliminar un auto del registro,  X para finalizar: ').toUpperCase();
-
 if(opcion != 'C' && opcion!= 'R' && opcion !='U' && opcion!='D'){
     throw new Error(" la letra que ingreso no responde a un comando ");
 }
@@ -51,6 +49,9 @@ while (opcion != 'X') {
     }
 
 }catch(error){
+    
     console.log(error.message);
+    console.log("soy el error del catch del main ");
+    
     
 }

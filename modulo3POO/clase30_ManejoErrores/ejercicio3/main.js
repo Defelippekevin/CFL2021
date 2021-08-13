@@ -48,4 +48,5 @@ try {
 }
 catch (error) {
     console.log(error.message);
+    console.log("soy el error del catch del main ");
 }
