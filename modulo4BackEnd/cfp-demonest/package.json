@@ -24,10 +24,7 @@
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
-<<<<<<< HEAD
-=======
     "@nestjs/serve-static": "^2.2.2",
->>>>>>> e36320977d398a00789a607527fe3a6ef2ed2986
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
