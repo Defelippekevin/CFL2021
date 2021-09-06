@@ -13,7 +13,29 @@ let botonTotal=document.querySelector("#sumarTotal");
 botonTotal.addEventListener("click",sumarPrecioCompras);
 
 
-let arrayCompras= [];
+
+
+let arrayCompras=[];
+async function load(){
+    let container= document.querySelector("#useAjax");
+    container.innerHTML = "<h1> ...LOADING... </h1>";
+    try{
+        let response= await fetch('js/mook.json');
+        if(response.ok){
+            let t = await response.json();
+            //let v = JSON.stringify(t);
+            arrayCompras=t.compras;
+            //console.log(v);
+            actualizarCarrito();
+            container.innerHTML= "";
+        }else{
+            container.innerHTML= "<h1> fallo la url </h1>";
+        }
+    }catch(error){
+        container.innerHTML= "<h1>"+error.message+"</h1>";
+    };
+}
+load();
 
 function agregar(){ 
     let carrito={
@@ -39,7 +61,7 @@ function actualizarCarrito(){
   function sumarPrecioCompras(){
     let suma=0;
     for(let i=0; i<arrayCompras.length; i++){
-      suma= suma + arrayCompras[i].precio;
+      suma= suma + parseFloat(arrayCompras[i].precio);
         }
 sumaPrecioCompras.innerHTML = suma;
   }
