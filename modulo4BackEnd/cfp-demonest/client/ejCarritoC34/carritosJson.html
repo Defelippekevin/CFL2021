@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carritosJson</title>
+</head>
+<body>
+
+    <h2>Bienvenido al carro de compras</h2>
+    <a href="carrCompras.html">carrito mook</a>
+
+    <label for="compra">Ingrese producto</label>
+    <input type="text" name="producto" id="producto">
+    <label for="compra">Ingrese el precio</label>
+    <input type="number" name="compra" id="precio">
+
+    <button id="agregar"> agregar </button>
+    <button id="sumarTotal">sumar todo</button>
+
+    <table>
+        <thead>
+            <td>producto</td>
+            <td>precio</td>
+        </thead>
+        <tbody id="tabla"></tbody>
+    </table>
+
+    <p id="total">0</p>
+    
+
+    <script src="js/carritosJson.js"></script>
+</body>
+</html>
