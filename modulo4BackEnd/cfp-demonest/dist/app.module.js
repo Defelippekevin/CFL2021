@@ -12,6 +12,10 @@ const serve_static_1 = require("@nestjs/serve-static");
 const path_1 = require("path");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
+const producto_controller_1 = require("./producto/producto.controller");
+const producto_service_1 = require("./producto/producto.service");
+const cliente_controller_1 = require("./cliente/cliente.controller");
+const cliente_service_1 = require("./cliente/cliente.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -20,8 +24,8 @@ AppModule = __decorate([
                 rootPath: (0, path_1.join)(__dirname, '..', 'client'),
             }),
         ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [app_controller_1.AppController, producto_controller_1.ProductoController, cliente_controller_1.ClienteController],
+        providers: [app_service_1.AppService, producto_service_1.ProductoService, cliente_service_1.ClienteService],
     })
 ], AppModule);
 exports.AppModule = AppModule;
