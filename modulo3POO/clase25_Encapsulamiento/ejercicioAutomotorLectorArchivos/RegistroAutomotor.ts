@@ -10,7 +10,7 @@ export default class RegistroAutomotor {
         this.autos = [];
         this.archivotxt=new Archivo();
     }
-
+    
     public addAuto():void{
         let patente:string = RLS.question('Ingrese la pantente: ');
         let marca:string = RLS.question('Ingrese la marca: ');
