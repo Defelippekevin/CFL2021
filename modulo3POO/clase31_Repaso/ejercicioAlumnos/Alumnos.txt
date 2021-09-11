@@ -1,0 +1,6 @@
+1;kevin;7,6,8
+2;gonzalo
+3;pedro
+4;sonia;9,5,8
+5;norma;6,9,10
+6;susana
