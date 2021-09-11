@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista de documentos</title>
+</head>
+<body>
+
+    <h1>LISTA DE DOCUMENTOS</h1>
+
+    <form action="">
+    <label for="titulo">Titulo del documento</label>
+    <input type="text" name="titulo" id="titulo">
+
+    <label for="titulo">autor</label>
+    <input type="text" name="autor" id="autor">;
+
+    <label for="titulo">tema del documento</label>
+    <input type="text" name="tema" id="tema">
+
+    <br><label for="titulo">fecha de publicacion del documento</label> 
+    <input type="text" name="fecha" id="fecha">
+
+    <button type="button" id="enviar">Enviar</button>
+</form>
+    
+
+<table>
+    <thead>
+            <td>Titulo</td>
+            <td>Autor</td>
+            <td>Tema</td>
+            <td>fecha de publicacion</td>
+        </thead>
+
+    <tbody id="tabla"></tbody>
+</table>
+
+
+<button type="button" id="tituloAntiguo">mostrar titulo mas antiguo</button>
+<button type="button" id="anioAntiguedad">mostrar documentos con mas de un año de antiguedad</button>
+<button type="button" id="tituloModerno">mostrar el titulo mas nuevo</button>
+
+<br><label for="temaBuscar">ingrese el tema del cual quiere ver los documentos</label>
+<input type="text" name="" id="temaDeterminado">
+
+
+<button type="button" id="temaAbuscar">mostrar tema determinado </button>
+
+
+<p id="resultado">resultado</p>
+
+
+<script src="js/listaDocumentos.js"></script>
+
+</body>
+</html>
