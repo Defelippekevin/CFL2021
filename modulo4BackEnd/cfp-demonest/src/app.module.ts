@@ -7,6 +7,8 @@ import { ProductoController } from './producto/producto.controller';
 import { ProductoService } from './producto/producto.service';
 import { ClienteController } from './cliente/cliente.controller';
 import { ClienteService } from './cliente/cliente.service';
+import { CalcularController } from './calcular/calcular.controller';
+import { CalcularService } from './calcular/calcular.service';
 
 @Module({
   imports: [ServeStaticModule.forRoot({
@@ -14,7 +16,7 @@ import { ClienteService } from './cliente/cliente.service';
     'client'),
     }),
   ],
-  controllers: [AppController, ProductoController, ClienteController],
-  providers: [AppService, ProductoService, ClienteService],
+  controllers: [AppController, ProductoController, ClienteController, CalcularController],
+  providers: [AppService, ProductoService, ClienteService, CalcularService],
 })
 export class AppModule {}
