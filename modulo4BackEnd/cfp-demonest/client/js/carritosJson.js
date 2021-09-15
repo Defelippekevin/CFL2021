@@ -1,14 +1,17 @@
 
-let producto= document.querySelector("#producto");
-let precio= document.querySelector("#precio");
-let descripcion= document.querySelector("#descripcion");
-let sumaPrecioCompras = document.querySelector("#total");
 
 let botonAgregar = document.querySelector("#agregar");
 botonAgregar.addEventListener("click",agregar);
-
 let botonTotal=document.querySelector("#sumarTotal");
 botonTotal.addEventListener("click",sumarPrecioCompras);
+
+
+
+
+
+let sumaPrecioCompras = document.querySelector("#total");
+
+
 
 
 //let arrayCompras= [];
@@ -32,14 +35,27 @@ async function load(){
 load();
 
 
-function agregar(){ 
+async function agregar(){ 
+  let id= document.querySelector("#id");
+  let nombre= document.querySelector("#nombre");
+  let precio= document.querySelector("#precio");
     let carrito={
-        "producto":producto.value,
-        "precio": parseFloat(precio.value),
-        "descripcion":descripcion.value
+        "idProducto":id.value,
+        "nombreProducto": nombre.value,
+        "precio":parseFloat(precio.value)
     };
-    arrayCompras.push(carrito);
-    actualizarCarrito();
+    let resp = await fetch("/producto", {
+        "method": "POST",
+        "headers": { "Content-Type": "application/json" },
+        "body": JSON.stringify(carrito)
+    })
+    if (resp.ok){
+      arrayCompras.push(carrito);
+      actualizarCarrito();
+
+    }else{
+      console.log("fallo")
+    }
 }
 
 function actualizarCarrito(){
@@ -47,9 +63,9 @@ function actualizarCarrito(){
     for (let i = 0; i < arrayCompras.length; i++) {
         html += `
                <tr>
-                   <td>${arrayCompras[i].producto}</td>
+                   <td>${arrayCompras[i].idProducto}</td>
+                   <td>${arrayCompras[i].nombreProducto}</td>
                    <td>${arrayCompras[i].precio}</td>
-                   <td>${arrayCompras[i].descripcion}</td>
                    </tr>
            `;
     }
@@ -62,3 +78,26 @@ function actualizarCarrito(){
         }
 sumaPrecioCompras.innerHTML = suma;
   }
+  
+
+/*
+  async function crear(prod){
+    let response =await fetch('/producto',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(prod),
+    });
+
+  }
+
+  let productos={
+    "id":999,
+    "nombreProducto": "Mi producto 1",
+    "precio":998
+  }
+
+
+  crear(productos);
+  */
