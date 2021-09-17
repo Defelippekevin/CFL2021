@@ -19,6 +19,7 @@ export default class Producto{
 
     public getPrecio():number{
         return this.precio;
+        
     }
 
 
