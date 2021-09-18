@@ -19,10 +19,10 @@ export class ProductoService {
 // Más adelante agregar manejo de status code
         for (let i=0; i<this.listaProductos.length; i++) {
             if (this.listaProductos[i].getIdProducto()==id) {
-            producto = this.listaProductos[i];
+            return this.listaProductos[i];
         }
     }
-        return producto;
+        return null;
    }
 
    public create(prod:any){
