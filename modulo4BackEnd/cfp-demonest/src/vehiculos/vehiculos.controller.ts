@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import Vehiculos from './Vehiculos';
 import { VehiculosService } from './vehiculos.service';
 
 @Controller('vehiculos')
@@ -8,6 +9,11 @@ export class VehiculosController {
     @Get()
     public getVehiculos():any{
         return this.vehiculosServices.getVehiculos();
+    }
+
+    @Get(':patente')
+    public getProducto(@Param('patente') patente): Vehiculos {
+        return this.vehiculosServices.getVehiculo(patente);
     }
 
 

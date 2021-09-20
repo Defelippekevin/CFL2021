@@ -2,12 +2,12 @@
 
 let botonAgregar = document.querySelector("#agregar");
 botonAgregar.addEventListener("click",agregar);
+
 let botonTotal=document.querySelector("#sumarTotal");
 botonTotal.addEventListener("click",sumarPrecioCompras);
 
-
-
-
+btnBuscar = document.querySelector("#buscar")
+btnBuscar.addEventListener("click",FiltroId)
 
 let sumaPrecioCompras = document.querySelector("#total");
 
@@ -78,6 +78,48 @@ function actualizarCarrito(){
         }
 sumaPrecioCompras.innerHTML = suma;
   }
+  
+
+
+  async function FiltroId(){
+    let resultadoFiltrado = document.querySelector("#resultadoFiltrado");
+    idFiltrado= parseInt(document.querySelector("#BuscarId").value);
+    console.log(idFiltrado);
+    html = "";
+    try{
+      let response = await fetch ( `/producto/${idFiltrado}`);
+      if(response.ok){
+        let t= await response.json();
+        arrayCompras=[];
+        arrayCompras.push(t);
+        console.log(t);
+        resultadoFiltrado.innerHTML= "Producto: "+ arrayCompras[0].idProducto + " nombre "+ arrayCompras[0].nombreProducto + " Precio "+ arrayCompras[0].precio;
+      }else{
+      resultadoFiltrado.innerHTML = "ERROR URL";
+      }
+  }catch(err){
+      resultadoFiltrado.innerHTML = err.message;
+    }
+  }
+
+
+
+
+/*
+    for(let i=0 ;i<arrayCompras.length;i++){
+      if(arrayCompras[i].idProducto == idFiltrado){
+        html += `
+               <tr>
+                   <td>${arrayCompras[i].idProducto}</td>
+                   <td>${arrayCompras[i].nombreProducto}</td>
+                   <td>${arrayCompras[i].precio}</td>
+                   </tr>
+           `;
+    }
+    document.querySelector("#tabla").innerHTML = html;
+
+      }
+      */
   
 
 /*

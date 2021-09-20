@@ -17,6 +17,23 @@ export class VehiculosService {
         return this.listaVehiculos;
     }
 
+    public getVehiculo(patente:string):Vehiculos{
+        let producto = null;
+// Más adelante agregar manejo de status code
+        try{
+        for (let i=0; i<this.listaVehiculos.length; i++) {
+            if (this.listaVehiculos[i].getPatente()==patente) {
+            return this.listaVehiculos[i];
+        }
+    }
+        return null;
+ 
+    }catch(error){
+        throw new Error("patente no encontrada");
+    }
+
+}
+
 
     public crearAuto(auto:any){
         const vehiculo = new Auto(auto['marca'], auto['patente'], auto['modelo'], auto['anio'], auto['precio'], auto['capacidad'])

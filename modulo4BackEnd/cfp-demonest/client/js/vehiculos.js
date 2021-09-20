@@ -13,6 +13,9 @@ btnVerAutos.addEventListener("click",filtrarAutos);
 let btnVerCamionetas= document.querySelector("#verCamionetas");
 btnVerCamionetas.addEventListener("click",filtrarCamionetas);
 
+let btnBuscar= document.querySelector("#buscarPatente");
+btnBuscar.addEventListener("click",filtrarPatente)
+
 let vehiculos=[];
 
 async function load(){
@@ -116,6 +119,27 @@ async function load(){
 }
 
 load();
+
+async function filtrarPatente(){
+  let patenteFiltrada = document.querySelector("#filtroPatente");
+  let filtroPatente= document.querySelector("#patente").value;
+  console.log(filtroPatente);
+  html = "";
+    try{
+      let response = await fetch ( `/vehiculos/${filtroPatente}`);
+      if(response.ok){
+        let  t= await response.json();
+        vehiculos=[];
+        vehiculos.push(t);
+        console.log(t);
+        patenteFiltrada.innerHTML= "Vehiculo: "+ vehiculos[0].tipo + " marca "+ vehiculos[0].marca + " patente "+ vehiculos[0].patente + " modelo "+ vehiculos[0].modelo + " año "+vehiculos[0].anio + " precio "+ vehiculos[0].precio + " capacidad "+ vehiculos[0].capacidad;
+      }else{
+      patenteFiltrada.innerHTML = "Patente no encontrada";
+      }
+    }catch(err){
+      patenteFiltrada.innerHTML = err.message;
+  }
+}
 
 
 function filtrarCamionetas(){
