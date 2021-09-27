@@ -9,7 +9,12 @@ botonTotal.addEventListener("click",sumarPrecioCompras);
 btnBuscar = document.querySelector("#buscar")
 btnBuscar.addEventListener("click",FiltroId)
 
+let btnModificar= document.querySelector("#botonAct");
+btnModificar.addEventListener("click",modificar)
+
 let sumaPrecioCompras = document.querySelector("#total");
+
+let contenido = document.querySelector("#contenido");
 
 
 
@@ -102,6 +107,37 @@ sumaPrecioCompras.innerHTML = suma;
     }
   }
 
+
+ async function modificar(){
+  let id= document.querySelector("#id");
+  let nombre= document.querySelector("#nombre");
+  let precio= document.querySelector("#precio");
+      try {
+        let producto = {
+          "idProducto":id.value,
+          "nombreProducto": nombre.value,
+          "precio":parseFloat(precio.value)
+        }
+        let response = await fetch ( `/producto/${id.value}`,{
+                'method': 'PUT',
+                'headers': {'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(producto)
+        });
+        if (response.ok) {
+            load();
+            contenido.innerHTML = "Tarea modificada con éxito"
+            actualizarCarrito();
+        } else{
+            contenido.innerHTML = "Error en la modificacion en el servidor"
+        }
+    } catch (error) {
+        contenido.innerHTML = error.message;
+    }
+
+  
+
+  }
 
 
 

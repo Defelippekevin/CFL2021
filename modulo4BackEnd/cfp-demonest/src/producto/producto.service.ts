@@ -42,6 +42,19 @@ export class ProductoService {
 
    }
 
+   public updateProducto(id:number,prod:any):boolean{
+       let posicion = this.listaProductos.findIndex(p => p.getIdProducto() === id);
+
+       if(posicion >-1) {
+          const producto = new Producto(prod.idProducto, prod.nombreProducto, prod.precio);
+          this.listaProductos[posicion]= producto;
+          this.guardarDatos();
+          return true;
+       }
+
+       return false;
+   }
+
     private loadProductos(): void {
         let archivo = fs.readFileSync('productos.csv', 'utf8');
         const elementos = archivo
@@ -57,4 +70,14 @@ export class ProductoService {
         this.listaProductos.push(producto);
         }
     }
+
+    
+    private guardarDatos(){
+            let datos:string= '';
+            for(let productos of this.listaProductos){
+                datos+= `\r\n${productos.getIdProducto()},${productos.getNombre()},${productos.getPrecio()}`
+            }
+            fs.writeFileSync('productos.csv',datos.substr(2));
+        }
+    
 }
