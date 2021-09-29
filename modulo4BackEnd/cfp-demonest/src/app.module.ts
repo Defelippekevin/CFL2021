@@ -11,6 +11,10 @@ import { CalcularController } from './calcular/calcular.controller';
 import { CalcularService } from './calcular/calcular.service';
 import { VehiculosController } from './vehiculos/vehiculos.controller';
 import { VehiculosService } from './vehiculos/vehiculos.service';
+import { PostController } from './post/post.controller';
+import { PostService } from './post/post.service';
+import { ComentarioController } from './comentario/comentario.controller';
+import { ComentarioService } from './comentario/comentario.service';
 
 @Module({
   imports: [ServeStaticModule.forRoot({
@@ -18,7 +22,7 @@ import { VehiculosService } from './vehiculos/vehiculos.service';
     'client'),
     }),
   ],
-  controllers: [AppController, ProductoController, ClienteController, CalcularController, VehiculosController],
-  providers: [AppService, ProductoService, ClienteService, CalcularService, VehiculosService],
+  controllers: [AppController, ProductoController, ClienteController, CalcularController, VehiculosController, PostController, ComentarioController],
+  providers: [AppService, ProductoService, ClienteService, CalcularService, VehiculosService, PostService, ComentarioService],
 })
 export class AppModule {}
