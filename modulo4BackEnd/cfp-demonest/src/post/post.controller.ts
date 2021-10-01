@@ -16,6 +16,8 @@ export class PostController {
         return this.postService.getPost(parseInt(id));
     }
 
+    
+
     @Post()
     create(@Body() post:any):string{
         return this.postService.create(post);

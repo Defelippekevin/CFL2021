@@ -1,3 +1,5 @@
+import Comentario from "src/comentario/Comentario";
+
 export default class Post{
     private userId: number;
     private id:number;

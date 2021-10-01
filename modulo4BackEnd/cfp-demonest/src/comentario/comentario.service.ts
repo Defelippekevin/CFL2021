@@ -30,8 +30,10 @@ export class ComentarioService {
 
         if(coment.getPostId() && coment.getId() && coment.getName() && coment.getEmail() && coment.getBody()){
             this.listaComentarios.push(coment);
+           /*
             fs.appendFileSync('Comentarios.csv',
             '\n'+coment.getPostId()+ ',' + coment.getId() + ','+ coment.getName() + ',' + coment.getEmail() + ','+ coment.getBody());
+            */
             this.guardarDatos();
             return "ok";
         }

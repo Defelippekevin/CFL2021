@@ -17,7 +17,6 @@ export class PostService {
     }
 
     public getPost(id:number):Post{
-        let post=null;
         for(let i=0;i<this.listaPost.length;i++){
             if(this.listaPost[i].getId()==id){
                 return this.listaPost[i];
@@ -31,19 +30,25 @@ export class PostService {
 
         if(posteo.getUserId() && posteo.getId() && posteo.getTitle() && posteo.getBody()){
             this.listaPost.push(posteo);
+           /*
             fs.appendFileSync('Post.csv',
             '\n'+posteo.getUserId()+ ',' + posteo.getId() + ','+ posteo.getTitle() + ',' + posteo.getBody());
+            */
             this.guardarDatos();
             return "ok";
         }
+        
+        
 
         return "parametros incorrectos";
     }
 
     public delPost(id:number){
-        this.listaPost.splice(id-1,1);
-        this.guardarDatos();
-    }
+            let position = this.listaPost.findIndex(post => post.getId()===id);
+            this.listaPost.splice(position,1);
+            this.guardarDatos();
+        }
+
 
     public updatePost(id:number,post:any):boolean{
         let posicion = this.listaPost.findIndex(p => p.getId() === id);
@@ -51,7 +56,6 @@ export class PostService {
         if(posicion>-1){
             const posteo = new Post(post.userId, post.id, post.title, post.body);
             this.listaPost[posicion]=posteo;
-            
             this.guardarDatos();
             return true;
         }
