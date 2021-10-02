@@ -16,6 +16,11 @@ export class ComentarioController {
         return this.comentariosService.getComentario(parseInt(id));
     }
 
+    @Get('/postId/:id')
+    public getComentarioPostid(@Param('id') postId):Comentario[]{
+        return this.comentariosService.getComentarioPorPost(parseInt(postId));
+    }
+
     @Post()
     create(@Body() comentario:any):string{
         return this.comentariosService.create(comentario);

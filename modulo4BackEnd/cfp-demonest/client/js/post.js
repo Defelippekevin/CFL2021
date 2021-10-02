@@ -10,7 +10,7 @@ btnModificar.addEventListener("click",modificarPost);
 let btnBorrar = document.querySelector("#borrar");
 btnBorrar.addEventListener("click", borrar);
 
-let posts = [];
+let posts = []; //arreglo global, lo accedo desde todo el archivo
 
 let userId= document.querySelector("#idUser")
 let idPost= document.querySelector("#idPost");
@@ -18,6 +18,7 @@ let titulo= document.querySelector("#titulo");
 let body= document.querySelector("#body");
 
 load();
+
 async function load(){
     try{
         let response= await fetch('/post');
@@ -37,12 +38,7 @@ async function load(){
 
 
   async function agregarPost(){ 
-    /*
-    let userId= document.querySelector("#idUser")
-    let idPost= document.querySelector("#idPost");
-    let titulo= document.querySelector("#titulo");
-    let body= document.querySelector("#body");
-    */
+   
       let posteo={
           "userId":userId.value,
           "id": idPost.value,
@@ -72,11 +68,11 @@ async function load(){
     for (let i = 0; i < posts.length; i++) {
         html += `
                <tr>
-                   <td>${posts[i].userId}</td>
-                   <td>${posts[i].id}</td>
+                   <td>${posts[i].userId} </td>
+                   <td>${posts[i].id} </td>
                    <td>${posts[i].title}</td>
                    <td>${posts[i].body}</td>
-
+                   <td><a href="/PostDetalle.html?index=${i}" id="idPost${i}">Link al post</a></td>
                    </tr>
            `;
     }

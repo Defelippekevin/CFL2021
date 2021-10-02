@@ -24,6 +24,17 @@ export class ComentarioService {
         }
         return null;
     }
+
+    public getComentarioPorPost(id):Comentario[]{
+      let  listComentariosId: Comentario []=[];
+      for(let i=0;i<this.listaComentarios.length;i++){
+          if(this.listaComentarios[i].getPostId()==id){
+            listComentariosId.push(this.listaComentarios[i]);
+          }
+      }
+      return listComentariosId;
+      
+    }
     
     public create(comentario:any){
         const coment= new Comentario(comentario['postId'], comentario['id'], comentario['name'], comentario['email'], comentario['body'])
