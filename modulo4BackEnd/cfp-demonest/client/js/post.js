@@ -65,14 +65,16 @@ async function load(){
   function actualizarPost(){
     html = "";
     document.querySelector("#tabla").innerHTML = html;
+    let idDelPost;
     for (let i = 0; i < posts.length; i++) {
+      idDelPost= posts[i].id;
         html += `
                <tr>
                    <td>${posts[i].userId} </td>
                    <td>${posts[i].id} </td>
                    <td>${posts[i].title}</td>
                    <td>${posts[i].body}</td>
-                   <td><a href="/PostDetalle.html?index=${i}" id="idPost${i}">Link al post</a></td>
+                   <td><a href="/PostDetalle.html?index=${idDelPost}" id="idPost${i}">Link al post</a></td>
                    </tr>
            `;
     }
@@ -113,7 +115,7 @@ async function buscado(){
         posts=[];
         posts.push(t);
         console.log(t);
-        resultadoFiltrado.innerHTML= "Post: "+ posts[0].userId + " id del post "+ posts[0].id + " titulo "+ posts[0].title + " contenido del post "+ posts[0].body;
+        resultadoFiltrado.innerHTML= "Post: "+ posts[0].userId + " id del post "+ posts[0].id + " titulo del Post "+ posts[0].title + " contenido del post "+ posts[0].body;
       }else{
       resultadoFiltrado.innerHTML = "ERROR URL";
       }
@@ -123,12 +125,6 @@ async function buscado(){
   }
 
 async function modificarPost(){
-  /*
-    let userId= document.querySelector("#idUser")
-    let idPost= document.querySelector("#idPost");
-    let titulo= document.querySelector("#titulo");
-    let body= document.querySelector("#body");
-    */
         try {
             let posteo={
                 "userId":userId.value,
