@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+</head>
+<body>
+    <h2>Posts</h2>
+
+    <label for="">ingrese su id</label>
+    <input type="text" id="idUser">
+
+    <label for="">ingrese el id del post</label>
+    <input type="text" id="idPost">
+
+    <label for=""> ingrese el titulo del post</label>
+    <input type="text" id="titulo">
+
+    <br> <label for=""> ingrese el contenido del post</label>
+    <input type="text" id="body">
+
+    <br><label for="">ingrese el id del post a buscar</label>
+    <input type="text" id="buscarPost">
+    
+    <button id="buscar"> buscar post</button>
+    <p id="resultadoFiltrado">post buscado</p>
+
+    <button id="agregar"> agregar post</button>
+    <button id="borrar"> borrar post</button>
+    <button id="modificar"> modificar post</button>
+
+
+    <table>
+        <thead>
+            <td>User id</td>
+            <td>id Post</td>
+            <td>titulo</td>
+            <td>contenido</td>
+            <td>Link al post</td>
+        </thead>
+        <tbody id="tabla"></tbody>
+    </table>
+
+    <script src="js/post.js"></script>
+</body>
+</html>
